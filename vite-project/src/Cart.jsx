@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CartContext } from "./context/cartContext";
+import { CartContext } from "./context/CartContext";
 import { Card } from "react-bootstrap";
 
 function Cart() {
@@ -14,19 +14,20 @@ function Cart() {
   return (
     <div>
       <h1 className="text-center mt-1">Shopping Cart</h1>
-
+      <div className="d-flex justify-content-center fs-1 m-5">
+        <b>Total Cart Amount :</b> ${totalAmount.toFixed(2)}
+      </div>
       {cart.map((item) => (
         <Card className="m-5 bs">
           <div className="row">
-            <div className="col-md-5">
-              <img src={item.imgUrl} className="img-fluid m-3" />
+            <div className="col-md-5 d-flex justify-content-center">
+              <img src={item.thumbnail} className="img-fluid m-3" />
             </div>
             <div className="col-md-7 d-flex justify-content-center">
               <ul className="fs-2 ">
                 <br />
                 <li>
-                  <b>Product Name : {item.name}</b>
-                  <p>{item.description}</p>
+                  <b>Product Name : {item.title}</b>
                 </li>
                 <br />
                 <li>
@@ -37,12 +38,9 @@ function Cart() {
                 </li>
                 <br />
                 <li>
-                  <b>Rate per peice :</b> Rs.{item.price}
+                  <b>Rate :</b> ${item.price}
                 </li>
                 <br />
-                <li>
-                  <b>Total Amount :</b> Rs.{item.quantity * item.price}
-                </li>
               </ul>
             </div>
           </div>

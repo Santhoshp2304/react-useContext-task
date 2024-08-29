@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartProvider } from './context/cartContext';
+import { CartProvider } from './context/CartContext';
 import Cart from './Cart';
 function App() {
 

@@ -7,13 +7,21 @@ export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([
     {
       id: 1,
-      imgUrl:
-        "https://i5.walmartimages.com/asr/69056846-b8a1-497a-b4f5-6172ab54b35d.a2102861007e11c433c127f2b63b038a.jpeg",
-      name: "HP Laptop",
-      description:"HP Laptop 14-Dq2031tg - Intel Core I3 Win 10 Home in 4 Gb Ram - 128 Gb SSD Natural Silver",
-      price: 30000,
-      quantity: 1,
-    },
+      title: "Rolex Watch",
+      price: 999.99,
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Submariner%20Watch/thumbnail.png",
+    quantity:1
+      },
+  
+    {
+      id: 2,
+      title: "Apple MacBook 14",
+      price: 1999.99,
+      thumbnail:
+        "https://cdn.dummyjson.com/products/images/laptops/Apple%20MacBook%20Pro%2014%20Inch%20Space%20Grey/thumbnail.png",
+    quantity:1
+      },
   ]);
   const increaseQuantity = (id) => {
     setCart(
