@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import { Card } from "react-bootstrap";
+import { Rating } from "@mui/material";
 
 function Cart() {
   const {
@@ -13,12 +14,18 @@ function Cart() {
 
   return (
     <div>
-      <h1 className="text-center mt-1">Shopping Cart</h1>
-      <div className="d-flex justify-content-center fs-1 m-5">
-        <b>Total Cart Amount :</b> ${totalAmount.toFixed(2)}
+      <h1 className="text-center mt-2">Shopping Cart</h1>
+      <div className="text-center fs-1 m-3">
+        <div>
+          <b>Total Cart Amount :</b> ${totalAmount.toFixed(2)}
+        </div>
+        <div>
+          {" "}
+          <b>Total Cart Quantity :</b> {totalQuantity}
+        </div>
       </div>
       {cart.map((item) => (
-        <Card className="m-5 bs">
+        <Card key={item.id} className="m-5 bs">
           <div className="row">
             <div className="col-md-5 d-flex justify-content-center">
               <img src={item.thumbnail} className="img-fluid m-3" />
@@ -40,6 +47,15 @@ function Cart() {
                 <li>
                   <b>Rate :</b> ${item.price}
                 </li>
+                
+                <Rating
+                  name="half-rating-read"
+                  defaultValue={4.5}
+                  precision={0.5}
+                  size="large"
+                  readOnly
+                />
+
                 <br />
               </ul>
             </div>
